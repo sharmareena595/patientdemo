@@ -1,0 +1,59 @@
+<div class="container">
+
+    <div class="user-profile shadow p-3 mb-3 bg-white rounded">
+
+
+        <div class="d-flex flex-row justify-content-between w-100 logo align-items-center">
+
+            <div class="p-2">
+                <h6>Patient List</h6>
+            </div>
+        </div>
+        <hr>
+
+        <div class="profileform-edit">
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="patientArray.length > 0">
+
+                <ng-container matColumnDef="firstName">
+                    <th mat-header-cell *matHeaderCellDef> First Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="lastName">
+                    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="address">
+                    <th mat-header-cell *matHeaderCellDef> Address </th>
+                    <td mat-cell *matCellDef="let element"> {{element.address1}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element">
+                            
+
+                        <i class="material-icons pointer m-2" (click)="viewDetail(element)"> remove_red_eye </i>
+                        <i class="material-icons pointer m-2" (click)="edit(element)"> edit</i>
+                        <i class="material-icons pointer m-2" (click)="delete(element.id)"> close</i>
+
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <div *ngIf="patientArray.length == 0">
+                No Record present
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,196 @@
+<div class="container">
+
+    <div class="user-profile shadow p-3 mb-3 bg-white rounded">
+
+
+        <div class="d-flex flex-row justify-content-between w-100 logo align-items-center">
+
+            <div class="p-2">
+                <h6>Patient Details</h6>
+            </div>
+        </div>
+    <hr>
+
+        <div class="profileform-edit">
+            <form [formGroup]="ProfileForm" (ngSubmit)="submitForm()">
+                <div class="profile-form custom-form">
+                    <div class="row">
+                        <div class="col-sm-4">
+
+                            <div class="form-group">
+                                <label class="center-block">First Name
+                                    <input class="form-control" formControlName="firstName">
+                                </label>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('firstName').errors?.required && (!submitted ||
+                  ProfileForm.get('firstName').touched)">
+                                    First Name is required
+                                </mat-error>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('firstName').errors?.pattern && (!submitted ||
+                  ProfileForm.get('firstName').touched)">
+                                    Please enter a valid First Name
+                                </mat-error>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="center-block">Last Name
+                                    <input class="form-control" formControlName="lastName">
+                                </label>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('lastName').errors?.required && (!submitted ||
+                  ProfileForm.get('lastName').touched)">
+                                    Last Name is required
+                                </mat-error>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('lastName').errors?.pattern && (!submitted ||
+                  ProfileForm.get('lastName').touched)">
+                                    Please enter a valid Last Name
+                                </mat-error>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="center-block">Phone
+                                    <input class="form-control" formControlName="mobile" minlength="10" maxlength="10">
+                                </label>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('mobile').errors?.required && (!submitted ||
+                      ProfileForm.get('mobile').touched)">
+                                    Phone number is required
+                                </mat-error>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('mobile').errors?.pattern && (!submitted ||
+                  ProfileForm.get('mobile').touched)">
+                                    Please enter a valid Phone number
+                                </mat-error>
+
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('mobile').errors?.minlength && (!submitted ||
+                  ProfileForm.get('mobile').touched)">
+                                    Phone number min length should be 10
+                                </mat-error>
+
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('mobile').errors?.maxlength && (!submitted ||
+                  ProfileForm.get('mobile').touched)">
+                                    Phone number max length should be 10
+                                </mat-error>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="center-block">Email
+                                    <input class="form-control" formControlName="email">
+                                </label>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('email').errors?.required && (!submitted ||
+                              ProfileForm.get('email').touched)">
+                                    Email is required
+                                </mat-error>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('email').errors?.email && (!submitted ||
+                  ProfileForm.get('email').touched)">
+                                    Please enter a valid Email
+                                </mat-error>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="center-block">Address Line 1
+                                    <input class="form-control" formControlName="address1">
+                                </label>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('address1').errors?.required && (!submitted ||
+                                  ProfileForm.get('address1').touched)">
+                                    Address Line 1 is required
+                                </mat-error>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="center-block">Address Line 2
+                                    <input class="form-control" formControlName="address2">
+                                </label>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('address2').errors?.required && (!submitted ||
+                                      ProfileForm.get('address2').touched)">
+                                    Address Line 2 is required
+                                </mat-error>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+
+                            <div class="form-group">
+                                <label class="center-block">City
+                                    <input class="form-control" formControlName="city">
+                                </label>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('city').errors?.required && (!submitted ||
+                  ProfileForm.get('city').touched)">
+                                    City is required
+                                </mat-error>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="center-block">State
+                                    <input class="form-control" formControlName="state">
+                                </label>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('state').errors?.required && (!submitted ||
+                  ProfileForm.get('state').touched)">
+                                    State is required
+                                </mat-error>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="center-block">Zipcode
+                                    <input class="form-control" formControlName="postcode" maxlength="6" minlength="6">
+                                </label>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('postcode').errors?.required && (!submitted ||
+                      ProfileForm.get('postcode').touched)">
+                                    Zipcode is required
+                                </mat-error>
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('postcode').errors?.pattern && (!submitted ||
+                  ProfileForm.get('postcode').touched)">
+                                    Please enter a valid Zipcode
+                                </mat-error>
+
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('postcode').errors?.minlength && (!submitted ||
+                  ProfileForm.get('postcode').touched)">
+                                    Zipcode min length should be 6
+                                </mat-error>
+
+                                <mat-error class="help-block" *ngIf="ProfileForm.get('postcode').errors?.maxlength && (!submitted ||
+                  ProfileForm.get('postcode').touched)">
+                                    Zipcode max length should be 6
+                                </mat-error>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary btn-rounded">Add</button>
+                </div>
+
+            </form>
+        </div>
+        <style>
+            .profile-box img {
+                width: 120px;
+            }
+
+            .profile-form {
+                margin: 30px 0;
+                overflow-x: hidden;
+            }
+        </style>
+
+    </div>
+
+</div>

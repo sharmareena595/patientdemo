@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav" fixedInViewport="true"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="!(isHandset$ | async)" style="overflow: hidden !important; top: 54px; " hasBackdrop="true">
+        <!-- <mat-icon (click)="sidenav.toggle()" class="closeMenu">close</mat-icon> -->
+        <div class="profile-pic-wrap curser-pointer">
+            <mat-toolbar  class="cursor-pointer">
+                <img alt="No Image" src="../../assets/profile.jpg"
+                    class="rounded-circle no-image img-fluid cursor-pointer">
+            </mat-toolbar>
+
+            <div class="text-center user-name">
+                <div class=""><small>Lorem lpsum</small></div>
+                <small>Admin</small>
+            </div>
+        </div>
+        <mat-nav-list class="text-center mt-2">
+            <div>
+                <a mat-list-item class="left-menu-padding nav-menu" routerLink="/dashboard" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    <div class="left-icon" title="Patient Dashboard">
+                        <i class="material-icons small-icon pb-1 float-left">
+                            home
+                        </i>
+                        <p class="p-0 float-left" *ngIf="router.url === '/dashboard'" title="Patient Dashboard"><small>Patient</small></p>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                    <a mat-list-item class="left-menu-padding nav-menu mb-2" (click)="logout()">
+                        <div class="left-icon" title="Logout">
+                            <i class="material-icons small-icon pb-1 float-left">
+                                    power_settings_new
+                            </i>
+                            <p class="p-0 float-left" title="Logout"><small>Logout</small></p>
+                        </div>
+                    </a>
+                </div>
+
+           
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+
+</mat-sidenav-container>

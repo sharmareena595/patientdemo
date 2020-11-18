@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/*login-screen*/
+.login-screen {
+  background-color: #d4d0d9 !important;
+  height: 100vh;
+}
+.login-box {
+  /* display: inline-flex; */
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 25%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  top: 30%;
+}
+.login-logo {
+  // margin-bottom: 100px;
+}
+mat-form-field {
+  width: 100%;
+}
+
+.login-box .color-light {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.login-box .active {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-screen input {
+  padding: 25px 20px !important;
+  border-radius: 10px;
+}
+.mat-fab, .mat-flat-button, .mat-mini-fab, .mat-raised-button {
+    color: #fff;
+}

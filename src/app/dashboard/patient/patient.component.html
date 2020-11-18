@@ -1,0 +1,16 @@
+
+<div class="container">
+    <div class="row shadow p-3 mb-3 bg-white rounded">
+        <h6>Patient Dashboard</h6>
+    </div>
+    <div class="row">
+        <div class="col-6">
+
+            <app-patient-detail (newItemEvent)="addItem($event)" [editItem]="editData"></app-patient-detail>
+        </div>
+        <div class="col-6">
+
+            <app-patient-list [item]="patiendData" (editItem)="edititemData($event)"></app-patient-list>
+        </div>
+    </div>
+</div>
